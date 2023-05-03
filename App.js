@@ -65,6 +65,7 @@ export default function App() {
       <View style={ styles.inputContainer } >
 
         <Text style= { styles.tittleContainer } >Hola Coder! Este es el Proyecto de Diego</Text>
+        
         <View style ={ styles.addItem } >
           <TextInput 
               placeholder='INGRESE UN ITEM' 
@@ -74,13 +75,15 @@ export default function App() {
           />
 
 
-          <Button title='Presiona aca para agregar el producto!!!!' onPress={ addItemtoList } />
+          <TouchableOpacity style={styles.buttonContainer} onPress={ addItemtoList } >
+              <Text style={styles.button} >Presiona aca para agregar el producto!!</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.listContainer} >
 
-        <Text>Aca debajo va la lista de lo que voy agregando</Text>
+        <Text  style={ { fontWeight:"700" } }>Aca debajo va la lista de lo que voy agregando</Text>
         <FlatList
           data={ list }  //----RECIBE EL ESTADO DE MI LISTA. SE ENVIA EN LA FUNCION "RENDER ITEM" 
           renderItem={ renderItem } //----ACA VA LA FUNCION QUE DEFINE COMO QUIERO QUE SE VEA MIS ITEMS
@@ -116,32 +119,50 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop:200,
-    backgroundColor: '#E7EAF2',
+    paddingTop:10,
+    backgroundColor: 'lightgreen',
     alignItems: 'center',
     justifyContent: 'center',
   },
   inputContainer: {
-    height: 200,
-    paddingHorizontal: 30,
-    paddingTop: 80,
-
+    height: 340,
+    marginTop:150,
+    paddingHorizontal: 100,
+    justifyContent:"center",
   },
   tittleContainer: {
     marginBottom: 30,
     fontSize: 40,
     fontWeight: "500",
+    justifyContent:"center",
     color: "#1E283C",
+    backgroundColor:"pink",
+    alignContent:"center",
+    textAlign:"center"
   },
   addItem:{
+    //flexWrap:"wrap",
+    height:80,
+    width: 400,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
+    backgroundColor:"yellow"
   },
   input: {
     borderBottomColor: "black",
     borderBottomWidth: 2,
     width: 200,
+
+  },
+  buttonContainer:{
+    //marginLeft:100
+  },
+  button:{
+    textAlign:"center",
+    width:150,
+    flexWrap:"wrap",
+    color:"blue"
   },
   listContainer: {
     flex: 2,
