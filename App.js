@@ -1,116 +1,55 @@
-import { StyleSheet, Text, View, Image, TextInput, Button, FlatList, TouchableOpacity, Modal } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList, TouchableOpacity, Modal } from 'react-native';
 
 import { useState } from 'react';
+import { useFonts } from 'expo-font';
 
+// -------------IMPORTS DE MODULOS
+
+import MyModal from './src/components/Modal/MyModal';
+import MyHeader from './src/components/Header/';
+import MyList from './src/components/Lista/MyList';
+import Compra from './src/screens/Compra/Compra';
+import MyInput from './src/components/Input/MyInput';
+import Inicio from './src/screens/Presentacion/Inicio';
 
 export default function App() {
 
-  const [ textItem, settextItem ] = useState( "" )
+  const [loaded] = useFonts({
 
-  const [ list, setlist ] = useState( [] )
+    "ShadowsIntoLight-Regular": require("./src/assets/fonts/ShadowsIntoLight-Regular.ttf")
 
-  const [ itemSelected , setItemSelected] = useState ( {} ) //CADA ITEM ES UN OBJETO
-
-  const [modalVisible, setModalVisible ] = useState ( false )
-
-  const handleTextChange = text => {   //RECIBE COMO PARAMETRO EL TEXTO QUE EL USUARIO VA A ESCRIBIR EN EL TEXTINPUT
-
-    settextItem( text )
-    console.log(text);
-    
-  }
-
-  const addItemtoList = (  ) => { 
-    
-     setlist( loqueestabantes => [...loqueestabantes, {nombre: textItem, id: Math.random().toString() }] )  //----> ES MUY IMPORTANTE EL SPREAD OPERATOR PARA CONSERVAR LOS ITEMS ANTERIORES Y LUEGO AGEGAR EL NUEVO
+  });
 
 
-    settextItem("")
+  const [ acceso, setAcceso ] = useState (false)
+
+
+
+  const handlerAcceso = ()=> { 
+
+    setAcceso( true )
 
   }
 
-  const onHandleModal = (item) => { 
-    console.log('Setea el item del modal') 
-    setItemSelected( item )
-    setModalVisible(true)
-
+  
+  if (!loaded) {
+    return null;
   }
 
-  const onHandleDelete = item => { 
+  let content = <Inicio propAcceso={ handlerAcceso } />;
 
-    console.log(item);
-    // setlist( loqueestabantes => loqueestabantes.filter( (element) => element !== id ) )
-    setlist( loqueestabantes => loqueestabantes.filter( (element) => element.nombre !== item.nombre ) )
-    setModalVisible( !modalVisible )
-
+  if ( acceso ) {
+    content=<Compra/>
   }
-
-
-
-  const renderItem = ( {item} ) => ( //VA ENTRE PARENTESIS DEVUELVE UN COMPONENTE. RETURN IMPLICITO
-    <View style={styles.ItemStyle} >
-      <Text> {item.nombre} </Text>
-      <Button 
-        title='Edit' 
-        onPress={ () => onHandleModal( item )  }
-        color={'violet'} 
-      />
-    </View> 
-   )
 
 
   return (
     <View style={styles.container}>
 
-      <View style={ styles.inputContainer } >
+      <MyHeader titulo={'Hola Coder! Este es el Proyecto de Diego'} otrosEstilos={styles.headerCointainer}></MyHeader>
 
-        <Text style= { styles.tittleContainer } >Hola Coder! Este es el Proyecto de Diego</Text>
-        
-        <View style ={ styles.addItem } >
-          <TextInput 
-              placeholder='INGRESE UN ITEM' 
-              style={ styles.input } 
-              onChangeText={ handleTextChange } //ESTE ES EL EVENTO QUE DETECTA CUANDO EL USUARIO ESCRIBE ALGO EN TEXTINPUT. ENVIA COMO PARAMETRO LO QUE ESCRIBA EL USER
-              value= {textItem}  //ACA DEFINO QUE EL VALOR DEL TEXT INPUT SEA EL ESTADO DE MI FUNCION    
-          />
+      {content}
 
-
-          <TouchableOpacity style={styles.buttonContainer} onPress={ addItemtoList } >
-              <Text style={styles.button} >Presiona aca para agregar el producto!!</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.listContainer} >
-
-        <Text  style={ { fontWeight:"700" } }>Aca debajo va la lista de lo que voy agregando</Text>
-        <FlatList
-          data={ list }  //----RECIBE EL ESTADO DE MI LISTA. SE ENVIA EN LA FUNCION "RENDER ITEM" 
-          renderItem={ renderItem } //----ACA VA LA FUNCION QUE DEFINE COMO QUIERO QUE SE VEA MIS ITEMS
-          keyExtractor=  { item => item.id } //EXTRAE LA KEY DEL ARRAY Y SE LA ASIGNA A CADA ITEM 
-        
-        />
-      </View>
-      <View>
-        <Modal visible = { modalVisible } animationType='slide' transparent={false} >
-            <View style={styles.modalContainer} >
-              <Text>El Modal</Text>
-            
-              <View>
-                <Text>¿Queres Borrar Este Elemento?</Text>
-                <Text>{ itemSelected.nombre }</Text>
-              </View>
-              <View>
-                <Button 
-                  title='Eliminar' 
-                  color={'red'} 
-                  onPress={ () => onHandleDelete ( itemSelected ) } 
-                />
-              </View>
-
-            </View>
-        </Modal>
-      </View>
 
     </View>
   );
@@ -122,13 +61,17 @@ const styles = StyleSheet.create({
     paddingTop:10,
     backgroundColor: 'lightgreen',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  headerCointainer:{
+
+    fontFamily: "ShadowsIntoLight-Regular"
+
   },
   inputContainer: {
-    height: 340,
-    marginTop:150,
+    marginTop: 30,
     paddingHorizontal: 100,
     justifyContent:"center",
+    backgroundColor:"blue"
   },
   tittleContainer: {
     marginBottom: 30,
@@ -141,7 +84,6 @@ const styles = StyleSheet.create({
     textAlign:"center"
   },
   addItem:{
-    //flexWrap:"wrap",
     height:80,
     width: 400,
     flexDirection: "row",
@@ -155,20 +97,11 @@ const styles = StyleSheet.create({
     width: 200,
 
   },
-  buttonContainer:{
-    //marginLeft:100
-  },
   button:{
     textAlign:"center",
     width:150,
     flexWrap:"wrap",
     color:"blue"
-  },
-  listContainer: {
-    flex: 2,
-    marginHorizontal: 30,
-    marginTop: 20,
-    padding: 3,
   },
   ItemStyle :{
 
@@ -185,13 +118,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowRadius: 2,
     elevation: 3,
-  },
-  modalContainer : {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems:'center'
-
   }
+  
 });
 
 
