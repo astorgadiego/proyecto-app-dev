@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View,Text } from 'react-native';
 
 import { useState } from 'react';
 import { useFonts } from 'expo-font';
@@ -9,7 +9,9 @@ import MyHeader from './src/components/Header/';
 
 import Compra from './src/screens/Compra/Compra';
 
-import Inicio from './src/screens/Presentacion/Inicio';
+import Inicio from './src/screens/Inicio/Inicio';
+import NavegacionApp from './src/navigation/NavegacionApp';
+
 //-----------------------------------------------------
 
 export default function App() {
@@ -39,19 +41,24 @@ export default function App() {
   let content = <Inicio propAcceso={ handlerAcceso } />;
 
   if ( acceso ) {
+
     content=<Compra/>
+  
+    
   }
 
 
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
 
-      <MyHeader titulo={'Hola Coder! Este es el Proyecto de Diego'} otrosEstilos={styles.headerCointainer}></MyHeader>
-
-      {content}
-
-
-    </View>
+    //   <MyHeader titulo={'Hola Coder! Este es el Proyecto de Diego'} otrosEstilos={styles.headerCointainer}></MyHeader>
+ 
+    //   {content}
+      
+    
+    // </View>
+    <NavegacionApp/>
+    
   );
 }
 

@@ -4,6 +4,7 @@ import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
   pantallaContainer:{
+    flex:1,
     backgroundColor:"brown",
     alignItems:"center"
 

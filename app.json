@@ -3,7 +3,7 @@
     "name": "Proyecto_Diego_Astorga",
     "slug": "Proyecto_Diego_Astorga",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

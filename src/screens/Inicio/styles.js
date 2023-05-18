@@ -6,7 +6,7 @@ const styles = StyleSheet.create( {
     botonInicio: {
         backgroundColor:"orange",
         margin:20,
-        borderRadius:"35%",
+        borderRadius:35,
         height:80,
         width:"100%", 
         justifyContent:"center",
@@ -18,6 +18,15 @@ const styles = StyleSheet.create( {
         textAlign:"center",
         fontWeight:"bold", 
         color: colors.botonInicio
+    },
+    botonNavegacion:{
+        backgroundColor:"purple",
+        margin:20,
+        borderRadius:35,
+        height:80,
+ 
+        justifyContent:"center",
+        alignItems: 'center',
     }
 
  } )
