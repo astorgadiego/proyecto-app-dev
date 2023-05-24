@@ -5,8 +5,6 @@ import { useFonts } from 'expo-font';
 
 // -------------IMPORTS DE MODULOS
 
-import MyHeader from './src/components/Header/';
-
 import Compra from './src/screens/Compra/Compra';
 
 import Inicio from './src/screens/Inicio/Inicio';
@@ -16,11 +14,13 @@ import NavegacionApp from './src/navigation/NavegacionApp';
 
 export default function App() {
 
-  const [loaded] = useFonts({
+  // const [loaded] = useFonts({
 
-    "ShadowsIntoLight-Regular": require("./src/assets/fonts/ShadowsIntoLight-Regular.ttf")
+  //   "Fuente1": require("../../assets/fonts/Anton-Regular.ttf"),
+  //   "Fuente2": require('../../assets/fonts/ShadowsIntoLight-Regular.ttf'),
+  //   "Fuente3": require('../../assets/fonts/Mogra-Regular.ttf')
 
-  });
+  // });
 
 
   const [ acceso, setAcceso ] = useState (false)
@@ -34,9 +34,7 @@ export default function App() {
   }
 
   
-  if (!loaded) {
-    return null;
-  }
+  // if (!loaded) return null
 
   let content = <Inicio propAcceso={ handlerAcceso } />;
 
@@ -49,30 +47,8 @@ export default function App() {
 
 
   return (
-    // <View style={styles.container}>
 
-    //   <MyHeader titulo={'Hola Coder! Este es el Proyecto de Diego'} otrosEstilos={styles.headerCointainer}></MyHeader>
- 
-    //   {content}
-      
-    
-    // </View>
     <NavegacionApp/>
     
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop:10,
-    backgroundColor: 'lightgreen',
-    alignItems: 'center', //ESTA PROPIEDAD ES MUY IMPORTANTE PARA CENTRAR LAS COSAS
-  },
-  headerCointainer:{
-
-    fontFamily: "ShadowsIntoLight-Regular"
-
-  },
-
-});

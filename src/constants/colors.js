@@ -1,5 +1,3 @@
-fontWeight:"700"
-
 export default  {
 
     fondoPrimario : "lightgreen",

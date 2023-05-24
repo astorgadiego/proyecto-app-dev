@@ -20,14 +20,6 @@ const Compra = () => {
   
     const [modalVisible, setModalVisible ] = useState ( false )
   
-    const [ acceso, setAcceso ] = useState (false)
-
-    const handleTextChange = text => {   //RECIBE COMO PARAMETRO EL TEXTO QUE EL USUARIO VA A ESCRIBIR EN EL TEXTINPUT
-
-        settextItem( text )
-        console.log( text );
-        
-      }
     
       const addItemtoList = (  ) => { 
     
@@ -59,7 +51,6 @@ const Compra = () => {
    const onHandleDelete = item => { 
 
     console.log(item);
-    // setlist( loqueestabantes => loqueestabantes.filter( (element) => element !== id ) )
     setlist( loqueestabantes => loqueestabantes.filter( (element) => element.nombre !== item.nombre ) )
     setModalVisible( !modalVisible )
 
@@ -68,22 +59,12 @@ const Compra = () => {
 
   return (
     <View style={styles.pantallaContainer} >
-        <View style={styles.inputContainer} >
-          <View style={styles.addItem} >
-            <TextInput
-              placeholder='INGRESE UN ITEM'
-              style={styles.input}
-              onChangeText={handleTextChange} //ESTE ES EL EVENTO QUE DETECTA CUANDO EL USUARIO ESCRIBE ALGO EN TEXTINPUT. ENVIA COMO PARAMETRO LO QUE ESCRIBA EL USER
-              value={textItem}  //ACA DEFINO QUE EL VALOR DEL TEXT INPUT SEA EL ESTADO DE MI FUNCION    
-            />
 
-
-            <TouchableOpacity onPress={addItemtoList} >
-              <Text style={styles.button} >Presiona aca para agregar el producto!!</Text>
-            </TouchableOpacity>
-          </View>
-
-        </View>
+        <MyInput
+          actionTextChange={ settextItem }
+          theItem={ textItem }
+          actionAddToList={ addItemtoList }
+        />
 
         <MyList
           theList={list}
