@@ -28,6 +28,7 @@ const styles = StyleSheet.create( {
         textAlign:"center",
         fontWeight:"bold", 
         color: colors.botonInicio,
+        fontFamily:"Fuente1"
     },
 
 

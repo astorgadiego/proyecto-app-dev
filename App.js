@@ -9,18 +9,20 @@ import Compra from './src/screens/Compra/Compra';
 
 import Inicio from './src/screens/Inicio/Inicio';
 import NavegacionApp from './src/navigation/NavegacionApp';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 //-----------------------------------------------------
 
 export default function App() {
 
-  // const [loaded] = useFonts({
+  const [loaded] = useFonts({
 
-  //   "Fuente1": require("../../assets/fonts/Anton-Regular.ttf"),
-  //   "Fuente2": require('../../assets/fonts/ShadowsIntoLight-Regular.ttf'),
-  //   "Fuente3": require('../../assets/fonts/Mogra-Regular.ttf')
+    "Fuente1": require("./src/assets/fonts/Anton-Regular.ttf"),
+    "Fuente2": require('./src/assets/fonts/ShadowsIntoLight-Regular.ttf'),
+    "Fuente3": require('./src/assets/fonts/Mogra-Regular.ttf')
 
-  // });
+  });
 
 
   const [ acceso, setAcceso ] = useState (false)
@@ -34,7 +36,7 @@ export default function App() {
   }
 
   
-  // if (!loaded) return null
+  if (!loaded) return null
 
   let content = <Inicio propAcceso={ handlerAcceso } />;
 
@@ -48,7 +50,9 @@ export default function App() {
 
   return (
 
-    <NavegacionApp/>
+    <NavigationContainer>
+      <BottomTabNavigator/>
+    </NavigationContainer>
     
   );
 }
