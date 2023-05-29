@@ -12,8 +12,8 @@ const Inicio = ({ propAcceso, navigation }) => {
 
   return (
     <View style={styles.InicioContainer}>
-      <TouchableOpacity style={styles.botonNavegacion} onPress={ () => navigation.navigate("Nuestros productos") }>
-        <Text style={styles.textoInicio} >Navegar a Pagina de Compras!</Text>
+      <TouchableOpacity style={styles.botonNavegacion} onPress={ () => navigation.navigate("Nuestras Categorias") }>
+        <Text style={styles.textoInicio} >Navegar a Nuestras Categorias!</Text>
       </TouchableOpacity>
     </View>
   )

@@ -1,4 +1,5 @@
-import { StyleSheet, View,Text } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 import { useState } from 'react';
 import { useFonts } from 'expo-font';
@@ -8,9 +9,9 @@ import { useFonts } from 'expo-font';
 import Compra from './src/screens/Compra/Compra';
 
 import Inicio from './src/screens/Inicio/Inicio';
-import NavegacionApp from './src/navigation/NavegacionApp';
+import NavegacionApp from './src/navigation/NavegacionApp/NavegacionApp';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './src/navigation/BottomTabNavigator';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator/BottomTabNavigator';
 
 //-----------------------------------------------------
 
@@ -25,34 +26,38 @@ export default function App() {
   });
 
 
-  const [ acceso, setAcceso ] = useState (false)
+  const [acceso, setAcceso] = useState(false)
 
 
 
-  const handlerAcceso = ()=> { 
+  const handlerAcceso = () => {
 
-    setAcceso( true )
+    setAcceso(true)
 
   }
 
-  
+
   if (!loaded) return null
 
-  let content = <Inicio propAcceso={ handlerAcceso } />;
+  let content = <Inicio propAcceso={handlerAcceso} />;
 
-  if ( acceso ) {
+  if (acceso) {
 
-    content=<Compra/>
-  
-    
+    content = <Compra />
+
+
   }
 
 
   return (
+    // INTEGRACION DEL REDUX EN MI APP
+    <Provider store={store}> 
 
-    <NavigationContainer>
-      <BottomTabNavigator/>
-    </NavigationContainer>
-    
+      <NavigationContainer>
+        <BottomTabNavigator />
+      </NavigationContainer>
+
+    </Provider>
+
   );
 }

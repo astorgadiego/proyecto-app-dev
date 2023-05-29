@@ -5,8 +5,11 @@ import Ionicons from "@expo/vector-icons/Ionicons"
 
 //ACA NECESITO IMPORTAR TODOS LOS NAVEGADORES O EL STACK QUE VOY A USAR COMO COMPONENTE DENTRO DE LAS PESTAÑAS DENTRO DE CADA UNO DE MIS TABS
 
-import NavegacionApp from "./NavegacionApp";
-import NavegacionCart from "./NavegacionCart";
+import NavegacionApp from "../NavegacionApp/NavegacionApp";
+import NavegacionCart from "../NavegacionCart/NavegacionCart";
+
+import styles from "./styles";
+import NavegacionOrdenes from "../NavegacionOrdenes/NavegacionOrdenes";
 
 const BottomNav = createBottomTabNavigator()
 
@@ -17,7 +20,8 @@ export default BottomTabNavigator = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,
-                tabBarStyle: styles.TabBar
+                tabBarStyle: styles.TabBar,
+                tabBarHideOnKeyboard: true
             }}
         >
 
@@ -35,7 +39,7 @@ export default BottomTabNavigator = () => {
                 }}
             />
             <BottomNav.Screen
-                name="Cart"
+                name="Pestaña Carrito"
                 component={NavegacionCart}
                 options={{
                     tabBarIcon: () => (
@@ -47,27 +51,22 @@ export default BottomTabNavigator = () => {
                     )
                 }}
             />
+            <BottomNav.Screen
+                name="Pestaña Ordenes"
+                component={NavegacionOrdenes}
+                options={{
+                    tabBarIcon: () => (
+                        <View>
+                            <Ionicons name="list" size={30} color="blue" />
+                            <Text>Ordenes</Text>
+                        </View>
+
+                    )
+                }}
+            />
 
         </BottomNav.Navigator>
 
     )
 
 }
-
-const styles = StyleSheet.create({
-    TabBar: {
-
-        backgroundColor: "#fff",
-        paddingTop: 15,
-        borderTopEndRadius: 30,
-        borderTopStartRadius: 30,
-        height: 85,
-        position: "absolute",
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 5,
-
-    }
-})

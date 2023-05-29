@@ -12,7 +12,8 @@ const MyInput = ({ actionTextChange, theItem, actionAddToList }) => {
                     placeholder='INGRESE UN ITEM'
                     style={styles.input}
                     onChangeText={ actionTextChange } //ESTE ES EL EVENTO QUE DETECTA CUANDO EL USUARIO ESCRIBE ALGO EN TEXTINPUT. ENVIA COMO PARAMETRO LO QUE ESCRIBA EL USER
-                    value={ theItem }  //ACA DEFINO QUE EL VALOR DEL TEXT INPUT SEA EL ESTADO DE MI FUNCION    
+                    value={ theItem }  //ACA DEFINO QUE EL VALOR DEL TEXT INPUT SEA EL ESTADO DE MI FUNCION
+                        
                 />
 
 
