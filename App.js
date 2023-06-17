@@ -9,9 +9,12 @@ import { useFonts } from 'expo-font';
 import Compra from './src/screens/Compra/Compra';
 
 import Inicio from './src/screens/Inicio/Inicio';
+
 import NavegacionApp from './src/navigation/NavegacionApp/NavegacionApp';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator/BottomTabNavigator';
+
+import NavegacionPrincipal from './src/navigation' //AUTOMATICAMENTE TOMA LO QUE ESTA EN EL INDEX
 
 //-----------------------------------------------------
 
@@ -50,12 +53,13 @@ export default function App() {
 
 
   return (
-    // INTEGRACION DEL REDUX EN MI APP
+    // INTEGRACION DEL REDUX EN MI APP (PROVIDER)
     <Provider store={store}> 
 
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <BottomTabNavigator />
-      </NavigationContainer>
+      </NavigationContainer> */}
+      <NavegacionPrincipal/>
 
     </Provider>
 

@@ -10,7 +10,9 @@ import { elegirProducto, filtrarProductos} from '../../store/actions/action_prod
 const Productos = ({ navigation, route }) => {
 
   const prodFiltradoFromReducer = useSelector( estado => estado.globalProducts.ProductosFiltrados )
-  const categoriaSeleccionadaFromReducer = useSelector( estado => estado.globalCategories.CategoriaSeleccionada )
+
+  const categoriaSeleccionadaFromReducer = useSelector( estado => estado.globalCategories.CategoriaSeleccionada ) //EL USE SELECTOR NOS SIRVE PARA ACCEDER A UN ESTADO GLOBAL, DESDE REDU
+  
   const dispatchFromRedux = useDispatch()
   
   //const prodFiltrado = products.filter( prod => prod.category === route.params.IdCategory  ) //ACA HAGO EL FILTRADO DE PRODUCTOS POR SU CATEGORIA

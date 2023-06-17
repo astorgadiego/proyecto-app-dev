@@ -10,6 +10,7 @@ import NavegacionCart from "../NavegacionCart/NavegacionCart";
 
 import styles from "./styles";
 import NavegacionOrdenes from "../NavegacionOrdenes/NavegacionOrdenes";
+import NavegacionUbicacion from "../NavegacionUbicacion/NavegacionUbicacion";
 
 const BottomNav = createBottomTabNavigator()
 
@@ -30,7 +31,7 @@ export default BottomTabNavigator = () => {
                 component={NavegacionApp}
                 options={{
                     tabBarIcon: () => (
-                        <View>
+                        <View style={{justifyContent:"center", alignItems:"center"}} >
                             <Ionicons name="home" size={30} color="blue" />
                             <Text>Home</Text>
                         </View>
@@ -38,12 +39,13 @@ export default BottomTabNavigator = () => {
                     )
                 }}
             />
+
             <BottomNav.Screen
                 name="Pestaña Carrito"
                 component={NavegacionCart}
                 options={{
                     tabBarIcon: () => (
-                        <View>
+                        <View style={{justifyContent:"center", alignItems:"center"}} >
                             <Ionicons name="cart" size={30} color="blue" />
                             <Text>Cart</Text>
                         </View>
@@ -51,12 +53,27 @@ export default BottomTabNavigator = () => {
                     )
                 }}
             />
+
+            <BottomNav.Screen
+                name="Ubicacion"
+                component={NavegacionUbicacion}
+                options={{
+                    tabBarIcon: () => (
+                        <View style={{justifyContent:"center", alignItems:"center"}} >
+                            <Ionicons name="location" size={30} color="blue" />
+                            <Text>Ubicacion</Text>
+                        </View>
+
+                    )
+                }}
+            />
+
             <BottomNav.Screen
                 name="Pestaña Ordenes"
                 component={NavegacionOrdenes}
                 options={{
                     tabBarIcon: () => (
-                        <View>
+                        <View style={{justifyContent:"center", alignItems:"center"}} >
                             <Ionicons name="list" size={30} color="blue" />
                             <Text>Ordenes</Text>
                         </View>

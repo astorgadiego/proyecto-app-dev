@@ -1,4 +1,6 @@
+//ESTE ES MI ESTADO GLOBAL DE LAS CATEGORIAS
 import categories from "../../data/categories";
+
 import { ELECCION_CATEGORIA } from "../actions/action_categoria";
 
 const EstadoInicialCategorias = {

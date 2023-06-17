@@ -7,12 +7,16 @@ import styles from './styles'
 import categories from '../../data/categories'
 import MyCategories from '../../components/RenderCategorias'
 
+//---------------------------------------------------------------------------------------------
+
 import { useSelector, useDispatch } from 'react-redux'
 import { elegirCategoria } from '../../store/actions/action_categoria'
 
+//----------------------------------------------------------------------------------------------
+
 const Categorias = ({ navigation }) => {
 
-    const CategoriasFromReducer = useSelector( estado => estado.globalCategories.theCategorias )
+    const CategoriasFromReducer = useSelector( estado => estado.globalCategories.theCategorias ) //EL USE SELECTOR NOS SIRVE PARA ACCEDER A UN ESTADO GLOBAL, DESDE REDU
 
     const dispatchFromRedux = useDispatch()
 

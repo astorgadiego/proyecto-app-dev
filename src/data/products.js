@@ -43,7 +43,7 @@ export default [
       precio: 10,
     },
     {
-      id: "3",
+      id: "4",
       category: "1",
       nombre: "Cebolla",
       img:Cebolla,
@@ -52,7 +52,7 @@ export default [
       precio: 10,
     },
     {
-      id: "3",
+      id: "5",
       category: "1",
       nombre: "Cebolla",
       img:Cebolla,
@@ -61,7 +61,7 @@ export default [
       precio: 10,
     },
     {
-      id: "3",
+      id: "6",
       category: "1",
       nombre: "Cebolla",
       img:Cebolla,
@@ -71,7 +71,7 @@ export default [
     },
     
     {
-      id: "4",
+      id: "7",
       category: "3",
       nombre: "Frutilla Congelada",
       img:Frutilla,
@@ -80,7 +80,7 @@ export default [
       precio: 35,
     },
     {
-      id: "5",
+      id: "8",
       category: "2",
       nombre: "Pera",
       img:Pera,
@@ -90,7 +90,16 @@ export default [
       precio: 20,
     },
     {
-      id: "6",
+      id: "9",
+      category: "4",
+      nombre: "Semillas De Lino",
+      img:Lino,
+      description: "Alimento fuente de Omega3",
+      weight: "300gr",
+      precio: 20,
+    },
+    {
+      id: "10",
       category: "4",
       nombre: "Semillas De Lino",
       img:Lino,

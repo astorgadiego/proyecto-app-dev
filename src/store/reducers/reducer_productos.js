@@ -1,6 +1,7 @@
-import { ELECCION_PRODUCTO, PRODUCTOS_FILTRADOS } from "../actions/action_productos";
-
+//ESTE ES MI ESTADO GLOBAL DE LOS PRODUCTOS
 import products from "../../data/products";
+
+import { ELECCION_PRODUCTO, PRODUCTOS_FILTRADOS } from "../actions/action_productos";
 
 const EstadoIniciaProductos = {
     theProductos : products, //---> ACA DEBERIA LOS DATOS DESDE UNA BASE DE DATOS, POR AHORA LO HACES DESDE DATA

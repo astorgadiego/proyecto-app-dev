@@ -1,7 +1,7 @@
 import Brocoli from '../assets/img/brocoli.jpg'
 import Anana from '../assets/img/Anana.jpg'
 
-export const CART = [
+export default [
   {
     id: "1",
     category: "1",

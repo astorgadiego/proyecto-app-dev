@@ -15,7 +15,7 @@ const MyOrder = ( {theOrder, actionDelete} ) => {
         <View>
             <View>
                 <Text>{FormatearDia(theOrder.date)}</Text>
-                <Text>Total: $ {theOrder.total}</Text>
+                <Text>Total: $ {theOrder.theTotal}</Text>
             </View>
             <View>
                 <TouchableOpacity onPress={() => actionDelete( theOrder.id )} >
