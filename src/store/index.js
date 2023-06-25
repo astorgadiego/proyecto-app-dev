@@ -11,6 +11,7 @@ import ReducerOfProductos from "./reducers/reducer_productos";
 import ReducerOfCarrito from "./reducers/reducer_carrito";
 import ReducerOfOrden from "./reducers/reducer_ordenes";
 import ReducerOfAuth from "./reducers/reducer_auth";
+import ReducerOfDirecciones from "./reducers/reducer_direcciones";
 
 //ESTE ES EL ESTADO GLOBAL DE REDUX. CONJUNTO DE ESTADOS GLOBALES, CUYO VALOR SERAN LO QUE ME DEVUELVAN LOS REDUCERS.
 const ReducerRaiz = combineReducers( {
@@ -18,7 +19,8 @@ const ReducerRaiz = combineReducers( {
     globalProducts: ReducerOfProductos,
     globalCarrito : ReducerOfCarrito,
     globalOrdenes: ReducerOfOrden,
-    globalAuth: ReducerOfAuth
+    globalAuth: ReducerOfAuth,
+    globalDirecciones: ReducerOfDirecciones
 } )
 
 export default createStore( ReducerRaiz, applyMiddleware( thunk ) )//-->CREACION DE LA STORE (CONJUNTO DE ESTADOS GLOBALES)

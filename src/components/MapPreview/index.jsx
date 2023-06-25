@@ -4,6 +4,11 @@ import Map from '../../constants/Map'
 
 const MapPreview = ( { Location , children, newStyles} ) => {
 
+    useEffect(() => {
+      console.log('CACA',Location)
+    }, [])
+    
+
     const mapPreviewURL = Location ? `https://maps.googleapis.com/maps/api/staticmap?center=${Location.latitud},${Location.longitud}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C${Location.latitud},${Location.longitud}&key=${Map.API_KEY_MAP}` : "" 
     
     return (
