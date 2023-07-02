@@ -11,6 +11,8 @@ const ObtenerUbicacion = ( { navigation } ) => {
 
   const [theLocation, setTheLocation] = useState()
 
+  
+
   const handleSave = () => {
 
     //dispatch( addPlace(title, myImage) );

@@ -10,11 +10,20 @@ import Compra from './src/screens/Compra/Compra';
 
 import Inicio from './src/screens/Inicio/Inicio';
 
+import { init } from './src/db';
+
 import NavegacionApp from './src/navigation/NavegacionApp/NavegacionApp';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator/BottomTabNavigator';
 
 import NavegacionPrincipal from './src/navigation' //AUTOMATICAMENTE TOMA LO QUE ESTA EN EL INDEX
+
+init () 
+    .then(()=> console.log("BASE DE DATOS INICIADA"))
+    .catch(err => {
+      console.log("FALLA EN LA CREACION DE BASE DE DATOS")
+      console.log(err)
+    })
 
 //-----------------------------------------------------
 

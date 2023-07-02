@@ -5,7 +5,7 @@ import Map from '../../constants/Map'
 const MapPreview = ( { Location , children, newStyles} ) => {
 
     useEffect(() => {
-      console.log('CACA',Location)
+      console.log('Locaction: ',Location)
     }, [])
     
 

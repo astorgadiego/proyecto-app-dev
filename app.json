@@ -1,13 +1,17 @@
 {
   "expo": {
     "name": "Proyecto_Diego_Astorga",
-    "slug": "Proyecto_Diego_Astorga",
+    "slug": "santelmo-food",
     "version": "1.0.0",
-    "orientation": "",
-    "icon": "./assets/icon.png",
+    "orientation": "default",
+    "icon": "./assets/Icono-App.png",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash_app.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +23,24 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Icono-App.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cb4dab27-eaa4-4a2b-8ebf-1db64fe6de96"
+      }
+    },
+    "owner": "diegoastorga",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cb4dab27-eaa4-4a2b-8ebf-1db64fe6de96"
     }
   }
 }
