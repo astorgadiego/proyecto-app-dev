@@ -22,19 +22,20 @@ const ObtenerUbicacion = ( { navigation } ) => {
   };
 
   return (
-    <ScrollView>
-      <View style={{ justifyContent: "center", alignItems: "center", }} >
-        <Text style={{ textAlign: "center" }}>Necesitamos Obtener su Domicilio para poder Enviarle Su Pedido</Text>
+    <View style={{flex:1, }}>
+      <View style={{ justifyContent: "center", alignItems: "center",backgroundColor:"orange" }} >
+        <Text style={{ textAlign: "center" , backgroundColor:"violet",width:"90%"}}>Necesitamos Obtener su Domicilio para poder Enviarle Su Pedido</Text>
         
         <LocationSelector  onLocation={ setTheLocation } />
+
         <Button
-          
           title="Guardar direccion"
           color={"#a53860"}
           onPress={handleSave}
         />
+        
       </View>
-    </ScrollView>
+    </View>
   )
 }
 

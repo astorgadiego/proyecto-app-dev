@@ -11,7 +11,7 @@ const MyProducts = ( { theProduct, onProductSelected } ) => {
         </View>
         <View style={{justifyContent:"center", alignItems:"center" , height:"30%", maxHeight:"30%"}}>
             <Text style={{color:"white",fontFamily:"Fuente1"}}>{theProduct.nombre}</Text>
-            <Text style={{color:"white"}}>{theProduct.description}</Text>
+            <Text style={{color:"white",fontSize:11, textAlign:"center"}}>{theProduct.description}</Text>
             <Text style={{color:"white"}}>${theProduct.precio}</Text>
         </View>
     </TouchableOpacity>

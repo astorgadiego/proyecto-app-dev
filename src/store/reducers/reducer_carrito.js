@@ -1,6 +1,4 @@
 //ESTE ES MI ESTADO GLOBAL DE MI CARRITO
-import carrito from "../../data/carrito";
-
 import { AGREGAR_ITEM, CONFIRMAR_CART, BORRAR_ITEM } from "../actions/action-carrito";
 
 const EstadoInicialCarrito = {

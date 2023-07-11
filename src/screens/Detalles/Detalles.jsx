@@ -9,7 +9,6 @@ const Detalles = ({ route }) => {
 
   const ProductoFromReducer = useSelector( estado => estado.globalProducts.productoSeleccionado ) //-->ESTE ES MI PRODUCTO SELECCIONADO AL CUAL ACCEDO DE FORMA GLOBAL
 
-  const Producto = route.params.TodoElProducto
 
   const handleAddProduct = () => {
     dispatchFromRedux( addItem( ProductoFromReducer ) )

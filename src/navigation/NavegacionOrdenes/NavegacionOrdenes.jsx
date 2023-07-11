@@ -7,8 +7,15 @@ const NavegacionOrdenes = () => {
 
     return (
 
-        <MyStack.Navigator>
-            <MyStack.Screen name='Ordenes' component={Ordenes} />
+        <MyStack.Navigator
+        screenOptions={{
+            headerStyle:{
+                backgroundColor:"black"
+            },
+            headerTintColor:"white"
+        }}
+        >
+            <MyStack.Screen name='Ordenes Confirmadas' component={Ordenes} />
         </MyStack.Navigator>
 
     )

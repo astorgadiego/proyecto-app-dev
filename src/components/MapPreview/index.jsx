@@ -5,11 +5,11 @@ import Map from '../../constants/Map'
 const MapPreview = ( { Location , children, newStyles} ) => {
 
     useEffect(() => {
-      console.log('Locaction: ',Location)
+      console.log('Location:',Location)
     }, [])
     
 
-    const mapPreviewURL = Location ? `https://maps.googleapis.com/maps/api/staticmap?center=${Location.latitud},${Location.longitud}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C${Location.latitud},${Location.longitud}&key=${Map.API_KEY_MAP}` : "" 
+    const mapPreviewURL = Location ? `https://maps.googleapis.com/maps/api/staticmap?center=${Location.latitud},${Location.longitud}&zoom=14&size=600x300&maptype=roadmap&markers=color:red%7Clabel:S%7C${Location.latitud},${Location.longitud}&key=${Map.API_KEY_MAP}` : "" 
     
     return (
       <View style={ { ...styles.mapPreview, ...newStyles } } >
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
       },
       mapImage: {
         width: 300,
-        height: 200,
+        height: 250,
       },
 })

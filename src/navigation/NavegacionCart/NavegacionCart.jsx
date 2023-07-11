@@ -7,7 +7,13 @@ const NavegacionCart = () => {
 
   return (
     
-    <MyStack.Navigator>
+    <MyStack.Navigator
+      screenOptions={{
+        headerStyle:{
+          backgroundColor:"#B06BCA"
+        }
+      }}
+    >
         <MyStack.Screen name='Cart' component={Cart} />
     </MyStack.Navigator>
 

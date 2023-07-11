@@ -37,42 +37,4 @@ export default [
         img:Categoria_Frutos_Secos,
         color:"#896978"
     },
-    {
-        id:"6",
-        titulo: "Frutos Secos",
-        img:Categoria_Frutos_Secos,
-        color:"#896978"
-    },
-    {
-        id:"7",
-        titulo: "Frutos Secos",
-        img:Categoria_Frutos_Secos,
-        color:"#896978"
-    },
-    {
-        id:"8",
-        titulo: "Frutos Secos",
-        img:Categoria_Frutos_Secos,
-        color:"#896978"
-    },
-    {
-        id:"9",
-        titulo: "Frutos Secos",
-        img:Categoria_Frutos_Secos,
-        color:"#896978"
-    },
-    {
-        id:"10",
-        titulo: "Frutos Secos",
-        img:Categoria_Frutos_Secos,
-        color:"#896978"
-    },
-    {
-        id:"11",
-        titulo: "Verduras",
-        img: Categoria_Verduras ,
-        color: colors.botonEliminar
-    },
-    
-
 ]

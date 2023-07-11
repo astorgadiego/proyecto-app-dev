@@ -1,5 +1,5 @@
 import { View, Text, Button, StyleSheet } from 'react-native'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -7,7 +7,7 @@ import * as Ubicacion from 'expo-location'
 
 import MapPreview from '../MapPreview'
 
-const LocationSelector = ( { onLocation } ) => {
+const LocationSelector = ({ onLocation }) => {
 
     const navigation = useNavigation()
 
@@ -16,11 +16,11 @@ const LocationSelector = ( { onLocation } ) => {
 
     const VerifyPermissions = async () => {
 
-        const { status } = await Ubicacion.requestForegroundPermissionsAsync () //ESTE ES EL METODO QUE PIDE LOS PERMISOS
+        const { status } = await Ubicacion.requestForegroundPermissionsAsync() //ESTE ES EL METODO QUE PIDE LOS PERMISOS
 
-        if ( status != 'granted' ) {
+        if (status != 'granted') {
 
-            Alert.alert('NO hay permisos','Los necesitamos', [ { text: 'Ok' } ])
+            Alert.alert('NO hay permisos', 'Los necesitamos', [{ text: 'Ok' }])
             return false
         }
 
@@ -30,52 +30,57 @@ const LocationSelector = ( { onLocation } ) => {
 
     const handleGetLocation = async () => {
 
-        const isUbicactionOk = await VerifyPermissions ()
+        const isUbicactionOk = await VerifyPermissions()
 
         if (!isUbicactionOk) return
 
         const location = await Ubicacion.getCurrentPositionAsync() //--> DEVUELVE UN OBJETO
 
-        setLocacionElegida( { 
+        setLocacionElegida({
 
-            latitud:  location.coords.latitude,
+            latitud: location.coords.latitude,
             longitud: location.coords.longitude
 
-        } )
+        })
 
-        onLocation( { 
+        onLocation({
 
-            latitud:  location.coords.latitude,
+            latitud: location.coords.latitude,
             longitud: location.coords.longitude
 
-        } )
+        })
     }
 
     return (
         <View style={styles.container} >
-      
-        <MapPreview Location={LocacionElegida} newStyles={styles.preview}  >
-          <Text>Ubicacion En Proceso...</Text>  
-        </MapPreview>
 
-        {/* {LocacionElegida ? ( <Text>{LocacionElegida.latitud}, {LocacionElegida.longitud}</Text> ) : ( <Text>Esperando Ubicacion...</Text> ) } */}
-  
-        <Button title='Obtener Ubicacion' color={"#f9dbbd"}  onPress={ handleGetLocation } />
-      </View>
+            <MapPreview Location={LocacionElegida} newStyles={styles.preview}  >
+                <Text>Esperando Ubicacion</Text>
+            </MapPreview>
+
+            {/* {LocacionElegida ? ( <Text>{LocacionElegida.latitud}, {LocacionElegida.longitud}</Text> ) : ( <Text>Esperando Ubicacion...</Text> ) } */}
+
+            <Button title='Obtener Ubicacion' color={"#a53860"} onPress={handleGetLocation} />
+        </View>
     )
 }
 
 export default LocationSelector
 
 const styles = StyleSheet.create({
-    container:{ marginBottom:10},
+    container: {
+        margin:10,
+        width:"50%"
+    },
     preview: {
+        backgroundColor: "yellow",
         width: "100%",
         height: 200,
         marginBottom: 10,
         justifyContent: "center",
         alignItems: "center",
-        borderColor: "#f9dbbd",
+        //borderColor: "#f9dbbd",
+        borderColor: "red",
         borderWidth: 1,
-      }
+    }
 })

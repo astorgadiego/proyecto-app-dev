@@ -42,16 +42,7 @@ const Categorias = ({ navigation }) => {
         <View style={styles.categoryConteiner}>  
         {/*EN ESTOS ESTILOS ES DONDE DEFINO QUE EL TAB NO TAPE MI LISTA!!!!*/}
         {/* // <View style={{ backgroundColor: "pink", marginBottom: 85, flex:1 }}> */}
-
-
-
-            <TouchableOpacity style={styles.botonNavegacion} onPress={() => navigation.navigate("Compra")}>
-                <Text style={{ ...styles.textoInicio, fontFamily: "Fuente3" }} >Navegar a Pagina de Compras!</Text>
-            </TouchableOpacity>
-            
-
             <FlatList
-                // data={categories}
                 data={CategoriasFromReducer}
                 renderItem={renderOfCategories}
                 keyExtractor={category => category.id}

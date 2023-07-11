@@ -45,7 +45,7 @@ export default BottomTabNavigator = () => {
                 component={NavegacionCart}
                 options={{
                     tabBarIcon: () => (
-                        <View style={{justifyContent:"center", alignItems:"center"}} >
+                        <View style={{justifyContent:"center", alignItems:"center",}} >
                             <Ionicons name="cart" size={30} color="blue" />
                             <Text>Cart</Text>
                         </View>

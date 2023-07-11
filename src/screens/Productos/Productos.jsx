@@ -42,7 +42,12 @@ const Productos = ({ navigation, route }) => {
   return (
     <View style={{ flex:1,backgroundColor: "pink",marginBottom: 85 }} >
         {/*EN ESTOS ESTILOS ES DONDE DEFINO QUE EL TAB NO TAPE MI LISTA!!!!*/}
-      <Text>ACA DEBAJO VAN LOS PRODUCTOS DE LA CATEGORIA SELECCIONADA</Text>
+      <Text style={{
+        fontSize: 16,
+        fontWeight: "bold",
+        fontStyle: "italic",
+        textAlign:"center"
+    }} >ACA DEBAJO VAN LOS PRODUCTOS DE LA CATEGORIA SELECCIONADA</Text>
 
       <FlatList
         // data={prodFiltrado}

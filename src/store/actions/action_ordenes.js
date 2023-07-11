@@ -13,11 +13,11 @@ export const getOrder = () => {
             } )
             
             const resultado = await response.json()
-            console.log(resultado)
+            console.log("Resultado",resultado)
             
             const MisOrdenes = Object.keys(resultado).map( key => ( { ...resultado[key], id : key } )  )
 
-            console.log("LAS ORDENES",MisOrdenes)
+            //console.log("LAS ORDENES",MisOrdenes)
 
             dispatch( { type: OBTENER_ORDEN, theOrders: MisOrdenes } )
 
